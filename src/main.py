@@ -8,3 +8,4 @@ import time
 from collections import Counter
 
 cv2.setUseOptimized(True)
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
