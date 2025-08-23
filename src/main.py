@@ -6,3 +6,5 @@ import numpy as np
 import sys
 import time 
 from collections import Counter
+
+cv2.setUseOptimized(True)
