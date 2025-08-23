@@ -11,3 +11,6 @@ cv2.setUseOptimized(True)
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 torch.backends.cudnn.benchmark = True      # increase FPS speed
 
+# the labels that we want to be in YOLO
+WANT = {'person','car','truck','bus','motorcycle','bicycle','dog','cat','bird','horse','cow','sheep'}
+
