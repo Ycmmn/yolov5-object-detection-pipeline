@@ -17,4 +17,5 @@ WANT = {'person','car','truck','bus','motorcycle','bicycle','dog','cat','bird','
 def load_model():
     # load the model and set it up simply
     modelmodel = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True).to(DEVICE)
+    
 
