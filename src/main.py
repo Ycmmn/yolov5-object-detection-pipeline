@@ -70,3 +70,10 @@ def get_frame(cap):
     # if success return the frame else stop the loop
     return frame if ret else None
 
+
+# YOLOv5 handles preprocessing==>  raw frame is enough
+# for future use if we need preprocessing in models without built-in support
+def preprocess(frame):
+    return frame
+
+    
