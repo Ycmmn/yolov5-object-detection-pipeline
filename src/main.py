@@ -112,3 +112,19 @@ def draw_and_compose(results, counts, fps):
     cv2.putText(vis, head, (10, 26), font, 0.7, (0,0,0), 2, cv2.LINE_AA)
     cv2.putText(vis, head, (10, 26), font, 0.7, (255,255,255), 1, cv2.LINE_AA)
     return vis
+
+
+
+
+def maybe_open_writer(save_flag, writer, frame_like, out_path='output.mp4', fps=30):
+    if not save_flag or writer is not None:
+        return writer
+    h, w = frame_like.shape[:2]
+    return cv2.VideoWriter(out_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))  
+
+
+
+def write_and_show(writer, vis):
+    if writer: writer.write(vis)
+    cv2.imshow("Object Detection (q to quit)", vis)
+ 
