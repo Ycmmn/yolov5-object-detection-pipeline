@@ -14,8 +14,18 @@ torch.backends.cudnn.benchmark = True      # increase FPS speed
 # the labels that we want to be in YOLO
 WANT = {'person','car','truck','bus','motorcycle','bicycle','dog','cat','bird','horse','cow','sheep'}
 
+
+# function to load and return the YOLOv5 model 
 def load_model():
-    # load the model and set it up simply
-    modelmodel = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True).to(DEVICE)
+    model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True).to(DEVICE)
+    model.conf = 0.35     # Confidence threshold
+    model.iou = 0.45     # threshold for bounding box
+    model.max_det = 300    # maximum number
+    
+    if DEVICE == 'cuda':
+        model.half()    # FP16
+    return model
+
+
     
 
