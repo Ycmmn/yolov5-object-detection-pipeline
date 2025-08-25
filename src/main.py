@@ -53,9 +53,14 @@ def open_source(src):
             
 
 
+# warm up the model
+def warmup(model):
+    # create a fake input (zero tensor) with shape (batch=1, channels=3, height=640, width=640)
+    x = torch.zeros((1, 3, 640, 640), device=DEVICE, dtype=torch.float16 if DEVICE == 'cuda' else torch.float32)
 
-
-
+    # no need to compute gradients during warmup
+    with torch.no_grad():
+        _ = model(x)   # run once to get the model ready and faster 
 
     
 
