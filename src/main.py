@@ -46,6 +46,10 @@ def open_source(src):
         #  if  video source not opened, stop the program with an error message
         if not cap.isOpened():
             raise SystemExit("❌ Video source could not be opened.")
+
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)  # use small buffer for less delay 
+
+        return cap 
             
 
 
