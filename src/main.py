@@ -83,3 +83,22 @@ def infer(model, image, size=640):
     results = model(image, size=size)  # run model on input
     return results
 
+
+
+def postprocess(results, names):
+    # get predictions
+    pred = getattr(results, 'pred', None)
+    pred = pred[0] if pred is not None else results.xyxy[0]
+
+    # if no prediction, return empty
+    if pred is None or len(pred) == 0:
+        return [], Counter()
+
+    # get class ids
+    cls_ids = pred[:, -1].int().tolist()
+
+    # set ids to labels
+    labels = [names[c] for c in cls_ids]
+
+    # return labels and count
+    return labels, Counter(labels)
