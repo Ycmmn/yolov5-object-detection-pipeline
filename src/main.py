@@ -102,3 +102,13 @@ def postprocess(results, names):
 
     # return labels and count
     return labels, Counter(labels)
+
+
+
+def draw_and_compose(results, counts, fps):
+    vis = results.render()[0]
+    head = "FPS:{:.1f} | ".format(fps) + (" | ".join(f"{k}:{v}" for k,v in counts.items()) or "---")
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(vis, head, (10, 26), font, 0.7, (0,0,0), 2, cv2.LINE_AA)
+    cv2.putText(vis, head, (10, 26), font, 0.7, (255,255,255), 1, cv2.LINE_AA)
+    return vis
