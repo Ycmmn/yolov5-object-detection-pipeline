@@ -76,4 +76,10 @@ def get_frame(cap):
 def preprocess(frame):
     return frame
 
-    
+
+@torch.no_grad()     # disable gradient for all this code block (inference only)
+def infer(model, image, size=640):
+    model.eval()  #set evaluation mode
+    results = model(image, size=size)  # run model on input
+    return results
+
