@@ -21,10 +21,23 @@ def load_model():
     model.conf = 0.35     # Confidence threshold
     model.iou = 0.45     # threshold for bounding box
     model.max_det = 300    # maximum number
-    
     if DEVICE == 'cuda':
         model.half()    # FP16
-    return model
+    
+    # get the class names that the model can detect
+    names = model.names  # we dont know dose it dict or list
+
+    #find number of classes that we want
+    if isinstance(names, dict):
+        # If names is a dict
+        model.classes = [i for i,n in names.items() if n in WANT ]
+
+    else:
+        #If names is a list
+        model.classes = [i for i,n in enumerate(names) if n in WANT]
+    
+    return model 
+
 
 
     
