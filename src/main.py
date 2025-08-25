@@ -62,5 +62,11 @@ def warmup(model):
     with torch.no_grad():
         _ = model(x)   # run once to get the model ready and faster 
 
-    
+
+# read one frame from video source  
+def get_frame(cap):
+    # try to read one frame from source
+    ret , frame = cap.read()  # if ret is True ==> return frame
+    # if success return the frame else stop the loop
+    return frame if ret else None
 
