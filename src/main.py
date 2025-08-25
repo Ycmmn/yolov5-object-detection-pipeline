@@ -42,7 +42,15 @@ def load_model():
 def open_source(src):
     # open video source with OpenCV
         cap = cv2.VideoCapture(src)
-        
+
+        #  if  video source not opened, stop the program with an error message
+        if not cap.isOpened():
+            raise SystemExit("❌ Video source could not be opened.")
+            
+
+
+
+
 
 
     
