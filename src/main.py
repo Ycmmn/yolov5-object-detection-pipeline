@@ -39,6 +39,11 @@ def load_model():
     return model 
 
 
+def open_source(src):
+    # open video source with OpenCV
+        cap = cv2.VideoCapture(src)
+        
+
 
     
 
