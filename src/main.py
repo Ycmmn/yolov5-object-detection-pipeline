@@ -138,7 +138,7 @@ def draw_and_compose(result, counts, fps):
 
 
 
-# To check whether the client needs to save video or not
+# to check the client needs to save video or not
 def maybe_open_writer(save_flag, writer, frame_like, out_path='output.mp4', fps=30):
 
     # if x:    ---> x is True
@@ -155,7 +155,13 @@ def maybe_open_writer(save_flag, writer, frame_like, out_path='output.mp4', fps=
 
 
 
+# write the current frame to a video file
 def write_and_show(writer, vis):
-    if writer: writer.write(vis)
+    # if client wants to save the video
+    if writer:
+        writer.write(vis)  # write frame to file
+    
+    # show the frame on screen
     cv2.imshow("Object Detection (q to quit)", vis)
- 
+
+
