@@ -138,12 +138,20 @@ def draw_and_compose(result, counts, fps):
 
 
 
-
+# To check whether the client needs to save video or not
 def maybe_open_writer(save_flag, writer, frame_like, out_path='output.mp4', fps=30):
+
+    # if x:    ---> x is True
+    # if not x: ---> x is False
     if not save_flag or writer is not None:
         return writer
+    
+    # get frame height and width
     h, w = frame_like.shape[:2]
-    return cv2.VideoWriter(out_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))  
+
+    # open video writer
+    return cv2.VideoWriter(out_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))
+
 
 
 
