@@ -165,3 +165,12 @@ def write_and_show(writer, vis):
     cv2.imshow("Object Detection (q to quit)", vis)
 
 
+
+
+# clean up all resources
+def cleanup(cap, writer):
+    cap.release()           # free the video source (webcam/file)
+    if writer:
+        writer.release()    # free the video writer
+    cv2.destroyAllWindows() # close all OpenCV windows
+
