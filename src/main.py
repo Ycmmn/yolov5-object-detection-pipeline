@@ -223,14 +223,14 @@ def main():
             # draw output and add header on top of frame
             vis = draw_and_compose(result, counts, fps)
 
-            # Create VideoWriter if saving is enabled
+            # create VideoWriter if saving is enabled
             writer = maybe_open_writer(save_flag, writer, vis, out_path=out_path, fps=30)
 
             # --------------------- Save frame and show -------------------
-            # Save frame to file if writer exists and show on screen
+            # save frame to file if writer exists and show on screen
             write_and_show(writer, vis)
 
-            # Exit the program by pressing 'q'
+            # exit the program by pressing 'q'
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
