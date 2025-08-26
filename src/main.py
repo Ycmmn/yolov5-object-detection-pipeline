@@ -111,12 +111,13 @@ def draw_and_compose(result, counts, fps):
     # draw boxes on the frame
     vis = result.render()[0]
 
-    # Create text for FPS
+    # create text for FPS
     fps_text = f"FPS: {fps:.1f} | "
 
-    # Create text for object counts
+    # create text for object counts
     if counts:  # counts is not None
         counts_text = " | ".join(f"{k}:{v}" for k, v in counts.items())
+
     else:  # counts is None
         counts_text = "---"
 
