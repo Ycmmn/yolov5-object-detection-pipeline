@@ -108,7 +108,7 @@ def postprocess(results, names):
 # the goal is to draw boxes on the frame and write a header on top of it
 # the header shows FPS and the counts of detected objects
 def draw_and_compose(result, counts, fps):
-    # Draw boxes on the frame
+    # draw boxes on the frame
     vis = result.render()[0]
 
     # Create text for FPS
