@@ -180,7 +180,7 @@ def cleanup(cap, writer):
 
 # ========================================== Run pipeline ============================================
 
-# Calling this function will run all pipelines
+# calling this function will run all pipelines
 def main():
     # ---------------------- Input / Output settings ------------------
 
