@@ -214,13 +214,13 @@ def main():
             # post process: get class labels and count them
             labels, counts = postprocess(result, names)
 
-            # ---------- FPS calculation ------------
+            # ----------------------- FPS calculation ------------
             now = time.time()
             dt = max(now - t_prev, 1e-6)
             fps = 1.0 / dt
             t_prev = now
 
-            # Draw output and add header on top of frame
+            # draw output and add header on top of frame
             vis = draw_and_compose(result, counts, fps)
 
             # Create VideoWriter if saving is enabled
