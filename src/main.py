@@ -132,7 +132,7 @@ def draw_and_compose(result, counts, fps):
     # write white text on top (for contrast)
     cv2.putText(vis, head, (10, 26), font, 0.7, (255, 255, 255), 1, cv2.LINE_AA)
 
-    # Return the frame with bounding boxes and header
+    # return the frame with bounding boxes and header
     return vis
 
 
