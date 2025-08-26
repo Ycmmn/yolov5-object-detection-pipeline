@@ -105,13 +105,35 @@ def postprocess(results, names):
 
 
 
-def draw_and_compose(results, counts, fps):
-    vis = results.render()[0]
-    head = "FPS:{:.1f} | ".format(fps) + (" | ".join(f"{k}:{v}" for k,v in counts.items()) or "---")
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(vis, head, (10, 26), font, 0.7, (0,0,0), 2, cv2.LINE_AA)
-    cv2.putText(vis, head, (10, 26), font, 0.7, (255,255,255), 1, cv2.LINE_AA)
+# The goal is to draw boxes on the frame and write a header on top of it
+# The header shows FPS and the counts of detected objects
+def draw_and_compose(result, counts, fps):
+    # Draw boxes on the frame
+    vis = result.render()[0]
+
+    # Create text for FPS
+    fps_text = f"FPS: {fps:.1f} | "
+
+    # Create text for object counts
+    if counts:  # counts is not None
+        counts_text = " | ".join(f"{k}:{v}" for k, v in counts.items())
+    else:  # counts is None
+        counts_text = "---"
+
+    # Combine both texts
+    head = fps_text + counts_text
+
+    font = cv2.FONT_HERSHEY_SIMPLEX 
+
+    # Write black shadow text at the top of the frame
+    cv2.putText(vis, head, (10, 26), font, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
+
+    # Write white text on top (for contrast)
+    cv2.putText(vis, head, (10, 26), font, 0.7, (255, 255, 255), 1, cv2.LINE_AA)
+
+    # Return the frame with bounding boxes and header
     return vis
+
 
 
 
