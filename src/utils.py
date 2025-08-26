@@ -78,9 +78,9 @@ def preprocess(frame):
 
 
 @torch.no_grad()     # disable gradient for all this code block (inference only)
-def infer(model, image, size=640):
+def infer(model, image, imgsz=640):
     model.eval()  #set evaluation mode
-    results = model(image, size=size)  # run model on input
+    results = model(image, imgsz=imgsz)  # run model on input
     return results
 
 

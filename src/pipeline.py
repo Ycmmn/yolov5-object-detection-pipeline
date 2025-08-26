@@ -40,7 +40,7 @@ def main():
 
             img = preprocess(frame)               # not needed for YOLOv5 (already handles it)
 
-            result = infer(model, img, size=640)    # run inference
+            result = infer(model, img, imgsz=640)    # run inference
 
             # post process: get class labels and count them
             labels, counts = postprocess(result, names)
