@@ -2,3 +2,7 @@ torch
 torchvision
 opencv-python
 numpy
+pillow
+requests
+PyYAML
+tqdm
