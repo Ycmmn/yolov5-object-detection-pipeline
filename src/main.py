@@ -182,7 +182,7 @@ def cleanup(cap, writer):
 
 # calling this function will run all pipelines
 def main():
-    # ---------------------- input / output settings ------------------
+    # ---------------------- input / output settings -------------
 
     # src = sys.argv[1] if len(sys.argv) > 1 else 0
     src = sys.argv[1] if len(sys.argv) > 1 else 0  # use first argument if given, else webcam
@@ -194,24 +194,24 @@ def main():
 
     cap = open_source(src)     # open the video source
     model = load_model()       # load YOLOv5
-    warmup(model)              # warm up the model to reduce initial lag
+    warmup(model)               # warm up the model to reduce initial lag
     names = model.names        # all class names the model can detect
     writer = None              # initialize writer if needed later
-    t_prev = time.time()       # store current system time to calculate FPS
+    t_prev = time.time()         # store current system time to calculate FPS
 
 
-    # ----------------------- Main loop inside try ----------------------
+    # ----------------------------------- main loop inside try -------------------------------
     try:
         while True:
             frame = get_frame(cap)               # read frame from video source
             if frame is None:
                 break                            # end of video or error
 
-            img = preprocess(frame)              # not needed for YOLOv5 (already handles it)
+            img = preprocess(frame)               # not needed for YOLOv5 (already handles it)
 
-            result = infer(model, img, size=640)  # run inference
+            result = infer(model, img, size=640)    # run inference
 
-            # Post-process: get class labels and count them
+            # post process: get class labels and count them
             labels, counts = postprocess(result, names)
 
             # ---------- FPS calculation ------------
