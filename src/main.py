@@ -121,15 +121,15 @@ def draw_and_compose(result, counts, fps):
     else:  # counts is None
         counts_text = "---"
 
-    # Combine both texts
+    # combine both texts
     head = fps_text + counts_text
 
     font = cv2.FONT_HERSHEY_SIMPLEX 
 
-    # Write black shadow text at the top of the frame
+    # write black shadow text at the top of the frame
     cv2.putText(vis, head, (10, 26), font, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
 
-    # Write white text on top (for contrast)
+    # write white text on top (for contrast)
     cv2.putText(vis, head, (10, 26), font, 0.7, (255, 255, 255), 1, cv2.LINE_AA)
 
     # Return the frame with bounding boxes and header
