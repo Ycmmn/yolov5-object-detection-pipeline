@@ -182,15 +182,15 @@ def cleanup(cap, writer):
 
 # calling this function will run all pipelines
 def main():
-    # ---------------------- Input / Output settings ------------------
+    # ---------------------- input / output settings ------------------
 
     # src = sys.argv[1] if len(sys.argv) > 1 else 0
     src = sys.argv[1] if len(sys.argv) > 1 else 0  # use first argument if given, else webcam
-    save_flag = True           # whether to save video
+    save_flag = True            # save video
     out_path = 'output.mp4'    # path of output video
 
 
-    # ----------------------- Preparation -----------------------------
+    # ----------------------- preparation -----------------------------
 
     cap = open_source(src)     # open the video source
     model = load_model()       # load YOLOv5
