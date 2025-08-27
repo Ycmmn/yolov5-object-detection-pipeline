@@ -20,23 +20,21 @@ It shows FPS, counts detected objects per frame, renders boxes, and (optionally)
 * 🧱 Modular: small pipeline.py (orchestrator) + reusable helpers in utils.py
 
 ---
-
-## 📁 Project Structure
-
+```
 yolov5-object-detection-pipeline/
-── src/
-│   ├── pipeline.py        
-│   ├── utils.py        
+│
+├── src/
+│   ├── pipeline.py        # main loop (orchestration)
+│   ├── utils.py           # helpers: model I/O, warmup, infer, render, save
 │   └── __init__.py
 │
 ├── examples/
-│   └── demo.gif           
-│
+│   └── demo.gif          
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
 └── LICENSE
-
+```
 ---
 
 ## 🧰 Requirements
