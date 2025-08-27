@@ -27,7 +27,7 @@ yolov5-object-detection-pipeline/
 │
 ├── src/
 │   ├── pipeline.py        
-│   ├── utils.py           
+│   ├── utils.py        
 │   └── __init__.py
 │
 ├── examples/
@@ -37,6 +37,7 @@ yolov5-object-detection-pipeline/
 ├── README.md
 ├── .gitignore
 └── LICENSE
+
 ---
 
 ## 🧰 Requirements
@@ -211,4 +212,12 @@ Use notebooks/demo.ipynb to quickly test the pipeline with images/videos and twe
 
 This project is released under the MIT License.
 See [LICENSE](./LICENSE) for details.
+
+---
+
+## ⭐️ Support
+
+If this project helps you, consider giving it a star on GitHub!
+PRs and issues are welcome.
+
 
