@@ -24,8 +24,7 @@ It shows FPS, counts detected objects per frame, renders boxes, and (optionally)
 ## 📁 Project Structure
 
 yolov5-object-detection-pipeline/
-│
-├── src/
+── src/
 │   ├── pipeline.py        
 │   ├── utils.py        
 │   └── __init__.py
