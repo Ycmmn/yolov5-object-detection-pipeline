@@ -37,7 +37,6 @@ yolov5-object-detection-pipeline/
 ├── README.md
 ├── .gitignore
 └── LICENSE
-
 ---
 
 ## 🧰 Requirements
@@ -55,7 +54,6 @@ tqdm==4.67.1
 
 > YOLOv5 (loaded via torch.hub) implicitly uses numpy, torchvision, pillow, PyYAML, requests, tqdm.
 > CUDA is optional but recommended for real-time performance.
-
 ---
 
 ## 🛠 Installation
@@ -214,9 +212,3 @@ Use notebooks/demo.ipynb to quickly test the pipeline with images/videos and twe
 This project is released under the MIT License.
 See [LICENSE](./LICENSE) for details.
 
----
-
-## ⭐️ Support
-
-If this project helps you, consider giving it a star on GitHub!
-PRs and issues are welcome.
