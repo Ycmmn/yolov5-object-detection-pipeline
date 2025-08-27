@@ -26,8 +26,8 @@ It shows FPS, counts detected objects per frame, renders boxes, and (optionally)
 yolov5-object-detection-pipeline/
 │
 ├── src/
-│   ├── pipeline.py        # main loop (orchestration)
-│   ├── utils.py           # helpers: model I/O, warmup, infer, render, save
+│   ├── pipeline.py        
+│   ├── utils.py           
 │   └── __init__.py
 │
 ├── examples/
