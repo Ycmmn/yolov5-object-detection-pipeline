@@ -30,6 +30,9 @@ yolov5-object-detection-pipeline/
 │   ├── utils.py           # helpers: model I/O, warmup, infer, render, save
 │   └── __init__.py
 │
+├── examples/
+│   └── demo.gif           
+│
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -57,14 +60,14 @@ tqdm==4.67.1
 
 ## 🛠 Installation
 
-# 1) create & activate a virtual environment (recommended)
+## 1) create & activate a virtual environment (recommended)
 python -m venv .venv
-# Windows
+## Windows
 .venv\Scripts\activate
-# Linux/Mac
+## Linux/Mac
 source .venv/bin/activate
 
-# 2) install deps
+## 2) install deps
 pip install --upgrade pip
 pip install -r requirements.txt
 
