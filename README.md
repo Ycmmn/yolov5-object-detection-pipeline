@@ -134,7 +134,7 @@ out_path  = 'output.mp4'
 ## 📸 Demo (add your media)
 
 ## Demo
-![YOLOv5 Demo](example.mp4)
+![YOLOv5 Demo](Example.gif)
 
 Place a short GIF in examples/demo.gif to showcase the pipeline.
 
